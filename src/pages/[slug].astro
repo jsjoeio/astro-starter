@@ -1,0 +1,40 @@
+
+---
+// collection
+// import au/thorData from '../data/authors.json';
+// Got this from here: https://github.com/Navillus-BV/sarahsu-co/blob/main/src/pages/%5Bslug%5D.astro
+export async function getStaticPaths() {
+  const allPages = Astro.fetchContent('../data/posts/*.md')
+
+  const paths = allPages.map(( { title, slug }) => {
+    return {
+      params: {
+        slug,
+      },
+      props: {
+        page: {
+          title,
+          slug,
+        }
+      }
+    }
+  })
+
+  return paths.filter(({ params }) => !!params.slug)
+}
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Example Blog';
+let description = 'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.';
+let permalink = 'https://example.com/blog/';
+
+
+const { page } = Astro.props;
+---
+<!DOCTYPE html>
+<div>
+    <h2>This is a blog post page</h2>
+</div>
