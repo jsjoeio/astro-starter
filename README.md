@@ -27,6 +27,14 @@ yarn
 yarn start
 ```
 
+To access Netlify CMS, you need to run the proxy server in a separate terminal:
+
+```shell
+npx netlify-cms-proxy-server
+```
+
+See [here](https://prince.dev/astro-netlify-cms) for more information.
+
 # Build Site
 
 ```shell
