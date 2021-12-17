@@ -4,3 +4,4 @@
 
 [[plugins]]
   package = "@netlify/plugin-a11y"
+  package = "netlify-plugin-no-more-404"
