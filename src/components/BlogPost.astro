@@ -8,7 +8,7 @@ export interface Props {
 
 const { title, author, publishDate, heroImage, alt } = Astro.props;
 
-function publishDateToMachineFriendlyDate(publishDate) {
+function publishDateToMachineFriendlyDate(publishDate: string) {
   return new Date(publishDate).toISOString()
 }
 
