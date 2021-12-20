@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.tsx';
 import BlogPost from '../components/BlogPost.tsx';
 
 const {content} = Astro.props;
-const {title, description, publishDate, author, heroImage, permalink, alt, html} = content;
+const {title, description, publishDate, author, heroImage, permalink, alt, content: { html }} = content;
 ---
 <!DOCTYPE html>
 <html lang={ content.lang || 'en' }>
