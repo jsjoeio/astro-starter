@@ -1,7 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.tsx';
-// import Header from '../components/astro/Header.astro';
-// import Footer from '../components/astro/Footer.astro';
 
 const {title, description, permalink, canonicalURL } = Astro.props;
 ---
@@ -10,11 +8,9 @@ const {title, description, permalink, canonicalURL } = Astro.props;
     <BaseHead title={title} description={description} permalink={permalink} canonicalURL={canonicalURL} />
   </head>
   <body>
-    <!-- <Header/> -->
       <main>
           <slot/>
       </main>
-    <!-- <Footer/> -->
   </body>
 </html>
 
