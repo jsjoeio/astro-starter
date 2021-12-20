@@ -1,13 +1,20 @@
 import site from '../data/site.js';
 
-function ArticleSchema({title, permalink, publishDate, ogImageUrl, description}) {
+type ArticleSchemaConfig = {
+    title: string
+    permalink: string
+    publishDate: string
+    ogImageUrl: string
+    description: string
+}
+function ArticleSchema({title, permalink, publishDate, ogImageUrl, description}: ArticleSchemaConfig) {
     const ldData = {
         "@context": "https://schema.org",
         "@type": "Article",
         "publisher": {
             "@type": "Organization",
             "name": `${site.name} Blog`,
-            "url": `${site.url}/blog/`,
+            "url": `${site.blogPath}`,
         },
         "author": {
             "@type": "Person",
@@ -18,12 +25,10 @@ function ArticleSchema({title, permalink, publishDate, ogImageUrl, description})
                 "width": 512,
                 "height": 512
             },
-            "url": "https://example.com/about/",
+            "url": `${site.url}${site.aboutPath}`,
             "sameAs": [
                 `${site.url}`,
-                `${site.facebookURL}`,
                 `${site.twitterURL}`,
-                `${site.instagramURL}`
             ]
         },
         "headline": `${title}`,
@@ -38,7 +43,7 @@ function ArticleSchema({title, permalink, publishDate, ogImageUrl, description})
         "description": `${description}`,
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `${site.url}/blog/`
+                "@id": `${site.url}${site.blogPath}`
             }
         }
     return (
