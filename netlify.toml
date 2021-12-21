@@ -1,6 +1,16 @@
 [build]
   command = "yarn build"
   publish = "dist"
+  
+[dev]
+  command = "yarn dev"
+  framework = "#custom"
+  port = 8888
+  targetPort = 3000
+  autoLaunch = false
+
+[functions]
+  directory = "functions/"
 
 [[plugins]]
   package = "netlify-plugin-no-more-404"
