@@ -1,4 +1,4 @@
-import site from '../data/site.js';
+import site from '../data/site';
 
 type ArticleSchemaConfig = {
     title: string

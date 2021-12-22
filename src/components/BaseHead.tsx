@@ -1,5 +1,5 @@
 import ArticleSchema from "./ArticleSchema";
-import site from "../data/site.js";
+import site from "../data/site";
 
 export interface BaseHeadProps {
   title: string;

@@ -50,6 +50,6 @@ See [here](https://prince.dev/astro-netlify-cms) for more information.
 yarn build
 ```
 
-Navigate to `src/data/site.js` and edit to match your site's information.
+Navigate to `src/data/site.ts` and edit to match your site's information.
 
 Start writing new blog posts in Markdown at `src/data/posts/`.
