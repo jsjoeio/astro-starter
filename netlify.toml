@@ -14,3 +14,8 @@
 
 [[plugins]]
   package = "netlify-plugin-no-more-404"
+
+  [plugins.inputs]
+  
+  # change this key to a new one any time you need to restart from scratch
+  cacheKey = "12_22_2021-cacheKey"
