@@ -12,6 +12,9 @@ I decided to make my own starter because I wanted to make a couple changes to th
 - store post/page data in `src/data/posts`
 - add Netlify CMS
 - add Netlify Redirects
+- add Netlify Redirects
+- add Tailwind
+- write components in React & TypeScript
 
 ## Get Started
 
