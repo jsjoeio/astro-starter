@@ -3,11 +3,11 @@ import site from '../data/site.js';
 type ArticleSchemaConfig = {
     title: string
     permalink: string
-    publishDate: string
+    date: string
     ogImageUrl: string
     description: string
 }
-function ArticleSchema({title, permalink, publishDate, ogImageUrl, description}: ArticleSchemaConfig) {
+function ArticleSchema({title, permalink, date, ogImageUrl, description}: ArticleSchemaConfig) {
     const ldData = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -33,7 +33,7 @@ function ArticleSchema({title, permalink, publishDate, ogImageUrl, description}:
         },
         "headline": `${title}`,
         "url": `${permalink}`,
-        "datePublished": `${publishDate}`,
+        "datePublished": `${date}`,
         "image": {
             "@type": "ImageObject",
             "url": `${site.url}${ogImageUrl}`,

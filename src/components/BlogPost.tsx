@@ -1,20 +1,17 @@
 
 export interface BlogPostProps {
   title: string;
-  author: string;
-  publishDate: string;
-  heroImage: string;
-  alt: string;
+  date: string;
   html: string
 }
 
-function publishDateToMachineFriendlyDate(publishDate: string) {
-  return new Date(publishDate).toISOString()
+function publishDateToMachineFriendlyDate(date: string) {
+  return new Date(date).toISOString()
 }
 
 function BlogPost(props: BlogPostProps) {
-    const { title, html, author, publishDate, heroImage, alt } = props;
-    const machineFriendlyDate = publishDateToMachineFriendlyDate(publishDate)
+    const { title, html, date } = props;
+    const machineFriendlyDate = publishDateToMachineFriendlyDate(date)
 
     return (
         <article style={{
@@ -22,9 +19,8 @@ function BlogPost(props: BlogPostProps) {
             padding: "1rem",
             maxWidth: "960px"
         }}>
-            {heroImage && <img width="720" height="420" style={{ width: "100%", height: "auto" }} loading="lazy" src={heroImage} alt={alt} />}
             <h1>{title}</h1>
-            <p>Last updated: <time dateTime={machineFriendlyDate}>{publishDate}</time></p>
+            <p>Last updated: <time dateTime={machineFriendlyDate}>{date}</time></p>
             <div dangerouslySetInnerHTML={{__html: html}} />
         </article>
     )

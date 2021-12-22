@@ -5,14 +5,14 @@ export interface BaseHeadProps {
   title: string;
   description: string;
   permalink: string;
-  publishDate: string;
+  date: string;
   ogImageUrl: string;
   canonicalURL?: string;
   articleSchema?: boolean;
 }
 
 function BaseHead(props: BaseHeadProps) {
-    const { title, description, permalink, publishDate, ogImageUrl, canonicalURL, articleSchema } = props;
+    const { title, description, permalink, date, ogImageUrl, canonicalURL, articleSchema } = props;
     return (
         <>
             <meta charSet="utf-8" />
@@ -62,7 +62,7 @@ function BaseHead(props: BaseHeadProps) {
                 rel="stylesheet"
                 type="text/css" />
             </noscript>
-            {articleSchema && (<ArticleSchema title={title} description={description} permalink={permalink} publishDate={publishDate} ogImageUrl={ogImageUrl} />)}
+            {articleSchema && (<ArticleSchema title={title} description={description} permalink={permalink} date={date} ogImageUrl={ogImageUrl} />)}
     </>
     )
 }

@@ -6,7 +6,7 @@ import BlogPostLayout from '../layouts/BlogPostLayout.astro';
 export async function getStaticPaths() {
   const allPages = Astro.fetchContent('../data/posts/*.md')
 
-  const paths = allPages.map(( { title, slug, content, publishDate, author, heroImage, permalink, alt, description }) => {
+  const paths = allPages.map(( { title, slug, content, date, description, tagline, tags }) => {
     return {
       params: {
         slug,
@@ -17,11 +17,9 @@ export async function getStaticPaths() {
           slug,
           content,
           description,
-          publishDate,
-          author,
-          permalink,
-          heroImage,
-          alt
+          date,
+          tagline,
+          tags
         }
       }
     }

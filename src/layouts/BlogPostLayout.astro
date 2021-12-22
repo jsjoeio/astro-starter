@@ -4,18 +4,20 @@ import BaseHead from '../components/BaseHead.tsx';
 import BlogPost from '../components/BlogPost.tsx';
 
 const {content} = Astro.props;
-const {title, description, publishDate, author, heroImage, permalink, alt, content: { html }} = content;
+const {title, description, date, tags, tagline, slug, content: { html }} = content;
+// TODO@jsjoeio replace with package that generates it
+const ogImageUrl = ""
 ---
 <!DOCTYPE html>
 <html lang={ content.lang || 'en' }>
   <head>
-    <BaseHead title={title} description={description} permalink={permalink} ogImageUrl={heroImage} publishDate={publishDate} canonicalURL={Astro.request.canonicalURL} articleSchema />
+    <BaseHead title={title} description={description} permalink={Astro.request.canonicalURL} ogImageUrl={ogImageUrl} date={date} canonicalURL={Astro.request.canonicalURL} articleSchema />
   </head>
 
   <body>
     <!-- <Header /> -->
     <main>
-      <BlogPost title={title} author={author} heroImage={heroImage} publishDate={publishDate} alt={alt} html={html} />
+      <BlogPost title={title} date={date} html={html} />
     </main>
     <!-- <Footer/> -->
   </body>
