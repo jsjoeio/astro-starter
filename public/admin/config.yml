@@ -10,7 +10,7 @@ editor:
   preview: false # we're going to hide the preview editor
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
+    label: "Blog Post" # Used in the UI
     folder: "src/data/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     # TODO@jsjoeio - maybe update slug later if you want
