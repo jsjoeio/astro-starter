@@ -16,6 +16,12 @@ I decided to make my own starter because I wanted to make a couple changes to th
 - add Tailwind
 - write components in React & TypeScript
 
+### Structure
+
+One thing to note about Pages vs Posts. All posts (i.e. blog posts) live in `/src/data/posts` and are Markdown files. Pages live under `/src/pages` and can be Markdown or Astro components.
+
+In the past, I've had some pages live next to blog posts, but I find that more confusing from a maintainence perspective.
+
 ## Get Started
 
 # Install Dependencies
